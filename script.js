@@ -1,26 +1,63 @@
 let total = 0;
-let random = 0;
 
-const randomise = () => {
+class Player {
+    constructor(bool) {
+        this.bool = bool
+        this.total = 0;
+        this.storedScore = 0;
+    }
+}
+
+const toggle = () => {
+    if (!player1) {
+        player2 = true;
+    }
+    else {
+        player1 = true;
+    }
+}
+
+const randomise = (player, rival) => {
     random = Math.floor(Math.random() * 6 + 1)
-    const button = document.getElementById("rollButton")
+
+    const rollButton = document.getElementById("rollButton")
+    const holdButton = document.getElementById("holdButton")
     const image = document.getElementById("dice")
-    button.textContent = "Roll"
+
+    rollButton.textContent = "Roll"
     image.src = "img/dice"+random+".png";
-    total = total + random
+    player.total = player.total + random
     document.getElementById("message").innerHTML = `Randomised Number = ${random} <br> Total = ${total} <br>`
     console.log(`total: ${total}`)
     console.log(`random: ${random}`)
+
+    holdButton.addEventListener("click", () => {
+        total = player.storedScore
+    })
+
     if (random == 1 && total < 20) {
-        document.getElementById("message").innerHTML += `You lose!`
-        button.textContent = "Try again"
-        total = 0
+        document.getElementById("message").innerHTML += `You lost the round!`
+        player.total = 0 
+        player.bool = false
+        rollButton.textContent = "Next"
     }
     else if (total >= 20) {
         document.getElementById("message").innerHTML += `You win!`
-        button.textContent = "Play again"
-        total = 0
+        rollButton.textContent = "Play again"
+        player.total = 0 
+        rival.total = 0
     }
 }
-random = 0;
-console.log("hello");
+// random = 0;
+
+let pl1 = new Player(true)
+let pl2 = new Player(false)
+
+toggle()
+
+if (pl1.bool) {
+    randomise(pl1, pl2)
+}
+else if (pl2.bool) {
+    randomise(pl2, pl1)
+}
