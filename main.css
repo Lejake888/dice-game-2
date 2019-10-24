@@ -1,92 +1,139 @@
-@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lalezar&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lalezar&display=swap");
 /* Title */
-
 h1 {
-    color:white;
-    text-align: center;
-    font-family: 'Staatliches', cursive;
-    font-size: 50px;
+  color: white;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  font-size: 50px;
 }
 
 body {
-    background-color: green;
-    margin: 20px;
+  text-align: center;
+  background-color: green;
+  margin: 20px;
 }
 
-/* square */
-
+/* squares */
 .square {
-    display: flex;
-    min-height: 80vh;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    /* background-color: rgba(255, 255, 255, 0.562); */
-    width: 100%;
-    outline: 5px solid black;
-    font-family: "Lalezar";
-    font-size: 40px;
-    text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 80vh;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* background-color: rgba(255, 255, 255, 0.562); */
+  width: 100%;
+  outline: 5px solid black;
+  font-family: "Lalezar";
+  font-size: 40px;
 }
 
-.square1{
-    min-height: 80vh;
-    width:50%;
-    background-color: aqua;
-    outline: 5px solid black;
-
+.square .square1 {
+  min-height: 80vh;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  outline: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.square2{
-    min-height: 80vh;
-    width:50%;
-    background-color: red;
-    outline: 5px solid black;
-
+.square .square2 {
+  min-height: 80vh;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  outline: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.square > #player{
-    color: black;
-    font-family: 'Lalezar', cursive;
-    font-size: 30px;
-}
-
+/* Middle */
 .section {
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2%;
+  /* p {
+        margin-left: -20px;
+        margin-right: -20px;
+        height: 140px;
+        width: 250px;
+    } */
+  /* p {
+        font-family: 'Lalezar', cursive;
+        font-size: 20px;
+    } */
+  /* Dice holder */
 }
 
-.section > button{
-    color: white;
-    background-color: green;
-    border: none;
-    outline: 2px solid black;
-    margin-bottom: 20px;
+.section button {
+  color: white;
+  background-color: green;
+  border: none;
+  width: 50px;
+  outline: 2px solid black;
+  margin-top: 30px;
 }
 
-.section > button:hover{
-    background-color: rgb(15, 73, 15);
+.section button:hover {
+  background-color: #0f490f;
 }
 
-.section > button:active{
-    background-color: rgb(14, 46, 14);
+.section button:active {
+  background-color: #0e2e0e;
 }
 
-p {
-    font-family: 'Lalezar', cursive;
-    font-size: 20px;
+.section #dice {
+  /* filter: grayscale(100%); */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  outline: 5px solid black;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-/* dice holder */ 
-
-.section > #dice {
-    filter: grayscale(100%);
-    flex-flow: row wrap;
-    outline: 5px solid black;
-    align-self: center;
-    /* margin-left: -1530px;
-    margin-top: 300px; */
+/* Infoboxes */
+.infoBox {
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: reverse;
+      -ms-flex-pack: reverse;
+          justify-content: reverse;
+  width: 200px;
+  height: 120px;
+  outline: 5px solid black;
+  background-color: #34a52a;
 }
+/*# sourceMappingURL=main.css.map */
