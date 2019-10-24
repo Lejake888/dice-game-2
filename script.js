@@ -11,9 +11,11 @@ class Player {
 const toggle = () => {
     if (!pla1.bool) {
         pla2.bool = true;
+        // document.getElementById("message").innerHTML = ""
     }
     else {
         pla1.bool = true;
+        // document.getElementById("message").innerHTML = ""
     }
 }
 
@@ -25,19 +27,19 @@ const randomise = (player, rival) => {
 
     rollButton.textContent = "Roll"
     image.src = "img/dice"+random+".png";
-    player.total = player.total + random;
-    document.getElementById("message").innerHTML = `Randomised Number = ${random} <br> Total = ${player.total} <br>`
-    console.log(`total: ${player.total}`)
+    total = total + random;
+    document.getElementById("message").innerHTML = `Randomised Number = ${random} <br> Total = ${total} <br>`
+    console.log(`total: ${total}`)
     console.log(`random: ${random}`)
 
     holdButton.addEventListener("click", () => {
-        player.total = player.storedScore
+        storedScore = total
+        player = false;
     })
 
-    if (random == 1 && player.total < 20) {
+    if (random == 1 && total < 20) {
         document.getElementById("message").innerHTML += `You lost the round!`
-        player.total = 0 
-        player.bool = false
+        total = 0 
         rollButton.textContent = "Next"
     }
     else if (total >= 20) {
