@@ -9,33 +9,32 @@ class Player {
 }
 
 const toggle = () => {
-    if (!player1) {
-        player2 = true;
+    if (!pla1.bool) {
+        pla2.bool = true;
     }
     else {
-        player1 = true;
+        pla1.bool = true;
     }
 }
 
 const randomise = (player, rival) => {
     random = Math.floor(Math.random() * 6 + 1)
-
     const rollButton = document.getElementById("rollButton")
     const holdButton = document.getElementById("holdButton")
     const image = document.getElementById("dice")
 
     rollButton.textContent = "Roll"
     image.src = "img/dice"+random+".png";
-    player.total = player.total + random
-    document.getElementById("message").innerHTML = `Randomised Number = ${random} <br> Total = ${total} <br>`
-    console.log(`total: ${total}`)
+    player.total = player.total + random;
+    document.getElementById("message").innerHTML = `Randomised Number = ${random} <br> Total = ${player.total} <br>`
+    console.log(`total: ${player.total}`)
     console.log(`random: ${random}`)
 
     holdButton.addEventListener("click", () => {
-        total = player.storedScore
+        player.total = player.storedScore
     })
 
-    if (random == 1 && total < 20) {
+    if (random == 1 && player.total < 20) {
         document.getElementById("message").innerHTML += `You lost the round!`
         player.total = 0 
         player.bool = false
@@ -50,14 +49,14 @@ const randomise = (player, rival) => {
 }
 // random = 0;
 
-let pl1 = new Player(true)
-let pl2 = new Player(false)
+let pla1 = new Player(true)
+let pla2 = new Player(false)
 
 toggle()
 
-if (pl1.bool) {
-    randomise(pl1, pl2)
+if (pla1.bool) {
+    randomise(pla1, pla2)
 }
-else if (pl2.bool) {
-    randomise(pl2, pl1)
+else if (pla2.bool) {
+    randomise(pla2, pla1)
 }
