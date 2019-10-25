@@ -33,7 +33,7 @@ body {
   width: 100%;
   outline: 5px solid black;
   font-family: "Lalezar";
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .square .square1 {
@@ -93,7 +93,7 @@ body {
   color: white;
   background-color: green;
   border: none;
-  width: 50px;
+  width: 100px;
   outline: 2px solid black;
   margin-top: 30px;
 }
