@@ -1,78 +1,73 @@
+let roll = document.getElementById("rollButton")
+
 let playerOne = true;
 let playerOneScore = 0;
 let playerTwoScore = 0;
+let total = 0;
 
-const toggle = () => {
-    if (player1) {
-        console.log("Hello")
-    }
-    else {
-        console.log("Bye")
-    }
-}
+// const toggle = () => {
+//     if (player1) {
+//         console.log("Hello")
+//     }
+//     else {
+//         console.log("Bye")
+//     }
+// }
 
 const check = () => {
-    if (pla1.bool) {
-        randomise(pla1.storedScore, pla2.storedScore)
+    if (playerOne) {
+        randomise(playerOne)
     }
-    else if (pla2.bool) {
-        randomise(pla2.storedScore, pla1.storedScore)
+    else {
+        randomise(playerTwo)
     }
 }
 
-const randomise = (player, rival) => {
-    random = Math.floor(Math.random() * 6 + 1)
-    const rollButton = document.getElementById("rollButton")
+const randomise = (player) => {
+    let random = Math.ceil(Math.random() * 6)
     const holdButton = document.getElementById("holdButton")
     const image = document.getElementById("dice")
 
     rollButton.textContent = "Roll"
     image.src = "img/dice"+random+".png";
     total = total + random;
+
     document.getElementById("message").innerHTML = `Random Number = ${random} <br> Total = ${total} <br>`
-    console.log(`total: ${total}`)
     console.log(`random: ${random}`)
+    console.log(`total: ${total}`)
 
     if (random == 1 && total < 20) {
-        // document.getElementById("message").innerHTML += `You lost the round!`
+        document.getElementById("message").innerHTML += `You lost the round!`
         total = 0 
         rollButton.textContent = "Next"
+        player = false;
     }
     else if (total >= 20) {
-        // document.getElementById("message").innerHTML += `You win!`
+        document.getElementById("message").innerHTML += `You win!`
         rollButton.textContent = "Play again"
         total = 0;
         random = 0;
     }
 }
-// random = 0;
-
-// Main code here
-
-let pla1 = new Player(true)
-let pla2 = new Player(false)
 
 holdButton.addEventListener("click", () => {
-    // player.storedScore = total
-    // player.bool = false
-    if (pla1) {
-        console.log("Hello")
-        pla1.storedScore = pla1.storedScore + total
+    if (playerOne) {
+        playerOneScore = playerOneScore + total
         total = 0;
-        pla1.bool = false;
-        toggle()
+        playerOne = false;
+        document.getElementById("message").innerHTML += `Player 1 now has ${playerOneScore} points`
+        check()
     }
-    else if (pla2) {
+    else if (playerTwo) {
         console.log("Bye")
-        pla2.storedScore = pla2.storedScore + total;
+        playerTwoScore = playerTwoScore + total;
         total = 0; 
-        pla2.bool = false;
-        toggle()
+        playerOne = true;
+        document.getElementById("message").innerHTML += `Player 2 now has ${playerTwoScore} points`
+        check()
     }
 }
 )
-
-let roll = document.getElementById("rollButton")
 
 roll.addEventListener("click", () => {
     check()
