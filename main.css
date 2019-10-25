@@ -107,7 +107,6 @@ body {
 }
 
 .section #dice {
-  /* filter: grayscale(100%); */
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;

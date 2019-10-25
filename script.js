@@ -17,13 +17,15 @@ let total = 0;
 
 const scores = () => {
     if (playerOneScore >= 20) {
-        document.getElementById("square1").innerHTML == `Player 1 wins`
+        document.getElementById("square1").innerHTML = `Winner`
+        console.log(playerOneScore)
         rollButton.textContent = "Play again"
         total = 0;
         random = 0;
     }
     else if (playerTwoScore >= 20) {
-        document.getElementById("square2").innerHTML == `Player 2 wins`
+        document.getElementById("square2").innerHTML = `Winner`
+        console.log(playerTwoScore)
         rollButton.textContent = "Play again"
         total = 0;
         random = 0;
@@ -66,18 +68,16 @@ const randomise = (player) => {
 
 holdButton.addEventListener("click", () => {
     if (playerOne) {
+        document.getElementById("message").innerHTML += `Player 1 now has ${playerOneScore} points`
         playerOneScore = playerOneScore + total
         total = 0;
         playerOne = false;
-        document.getElementById("message").innerHTML += `Player 1 now has ${playerOneScore} points`
-        check()
     }
     else {
         playerTwoScore = playerTwoScore + total;
+        document.getElementById("message").innerHTML += `Player 2 now has ${playerTwoScore} points`
         total = 0; 
         playerOne = true;
-        document.getElementById("message").innerHTML += `Player 2 now has ${playerTwoScore} points`
-        check()
     }
 }
 )
