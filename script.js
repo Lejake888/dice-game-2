@@ -1,4 +1,5 @@
 let roll = document.getElementById("rollButton")
+const holdButton = document.getElementById("holdButton")
 
 let playerOne = true;
 let playerOneScore = 0;
@@ -14,18 +15,33 @@ let total = 0;
 //     }
 // }
 
+const scores = () => {
+    if (playerOneScore >= 20) {
+        document.getElementById("square1").innerHTML == `Player 1 wins`
+        rollButton.textContent = "Play again"
+        total = 0;
+        random = 0;
+    }
+    else if (playerTwoScore >= 20) {
+        document.getElementById("square2").innerHTML == `Player 2 wins`
+        rollButton.textContent = "Play again"
+        total = 0;
+        random = 0;
+    }    
+}
+
 const check = () => {
+    scores()
     if (playerOne) {
-        randomise(playerOne)
+        randomise(playerOneScore)
     }
     else {
-        randomise(playerTwo)
+        randomise(playerTwoScore)
     }
 }
 
 const randomise = (player) => {
     let random = Math.ceil(Math.random() * 6)
-    const holdButton = document.getElementById("holdButton")
     const image = document.getElementById("dice")
 
     rollButton.textContent = "Roll"
@@ -33,21 +49,19 @@ const randomise = (player) => {
     total = total + random;
 
     document.getElementById("message").innerHTML = `Random Number = ${random} <br> Total = ${total} <br>`
-    console.log(`random: ${random}`)
-    console.log(`total: ${total}`)
 
     if (random == 1 && total < 20) {
         document.getElementById("message").innerHTML += `You lost the round!`
         total = 0 
         rollButton.textContent = "Next"
-        player = false;
+        playerOne = false;
     }
-    else if (total >= 20) {
-        document.getElementById("message").innerHTML += `You win!`
-        rollButton.textContent = "Play again"
-        total = 0;
-        random = 0;
-    }
+    // else if (total >= 20) {
+    //     document.getElementById("message").innerHTML += `You win!`
+    //     rollButton.textContent = "Play again"
+    //     total = 0;
+    //     random = 0;
+    // }
 }
 
 holdButton.addEventListener("click", () => {
@@ -58,8 +72,7 @@ holdButton.addEventListener("click", () => {
         document.getElementById("message").innerHTML += `Player 1 now has ${playerOneScore} points`
         check()
     }
-    else if (playerTwo) {
-        console.log("Bye")
+    else {
         playerTwoScore = playerTwoScore + total;
         total = 0; 
         playerOne = true;
