@@ -16,15 +16,20 @@ let total = 0;
 // }
 
 const scores = () => {
+    // if (playerOneScore ==0) {
+    //     console.log("hi")
+    // }
     if (playerOneScore >= 20) {
-        document.getElementById("square1").innerHTML = `Winner`
+        total = 0;
+        document.querySelector("square1").innerHTML = `Winner`
+        
         console.log(playerOneScore)
         rollButton.textContent = "Play again"
-        total = 0;
+        // total = 0;
         random = 0;
     }
     else if (playerTwoScore >= 20) {
-        document.getElementById("square2").innerHTML = `Winner`
+        document.querySelector("square2").innerHTML = `Winner`
         console.log(playerTwoScore)
         rollButton.textContent = "Play again"
         total = 0;
@@ -68,16 +73,20 @@ const randomise = (player) => {
 
 holdButton.addEventListener("click", () => {
     if (playerOne) {
-        document.getElementById("message").innerHTML += `Player 1 now has ${playerOneScore} points`
         playerOneScore = playerOneScore + total
+        document.getElementById("message").innerHTML = `Player 1 now has ${playerOneScore} points`
+        document.getElementById("text1").innerHTML = `${playerOneScore}`
         total = 0;
         playerOne = false;
+        scores()
     }
     else {
         playerTwoScore = playerTwoScore + total;
-        document.getElementById("message").innerHTML += `Player 2 now has ${playerTwoScore} points`
+        document.getElementById("text2").innerHTML = `Player 2 now has ${playerTwoScore} points`
+        document.getElementById("text2").innerHTML = `${playerTwoScore}`
         total = 0; 
         playerOne = true;
+        scores()
     }
 }
 )
