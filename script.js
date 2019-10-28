@@ -21,15 +21,14 @@ const scores = () => {
     // }
     if (playerOneScore >= 20) {
         total = 0;
-        document.querySelector("square1").innerHTML = `Winner`
-        
+        document.getElementById("One").innerHTML += `Winner`
         console.log(playerOneScore)
         rollButton.textContent = "Play again"
         // total = 0;
         random = 0;
     }
     else if (playerTwoScore >= 20) {
-        document.querySelector("square2").innerHTML = `Winner`
+        document.getElementById("Two").innerHTML += `Winner`
         console.log(playerTwoScore)
         rollButton.textContent = "Play again"
         total = 0;

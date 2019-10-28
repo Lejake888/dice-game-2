@@ -32,26 +32,11 @@ body {
           justify-content: space-between;
   /* background-color: rgba(255, 255, 255, 0.562); */
   width: 100%;
-  outline: 5px solid black;
   font-family: "Lalezar";
   font-size: 20px;
 }
 
-.square .square1 {
-  min-height: 80vh;
-  width: 50%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: white;
-  outline: 5px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.square .square2 {
+.square .square1, .square .square2 {
   min-height: 80vh;
   width: 50%;
   -webkit-box-orient: vertical;
@@ -92,10 +77,12 @@ body {
 
 .section button {
   color: white;
+  font-size: 25px;
   background-color: green;
   border: none;
   width: 100px;
-  outline: 2px solid black;
+  height: auto;
+  outline: 3px solid black;
   margin-top: 30px;
 }
 
