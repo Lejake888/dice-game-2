@@ -139,4 +139,9 @@ body {
   font-size: 80px;
   font-family: "Jura";
 }
+
+.infoBox #holder1, .infoBox #holder2 {
+  font-size: 100px;
+  font-family: "Jura";
+}
 /*# sourceMappingURL=main.css.map */

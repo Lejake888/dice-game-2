@@ -69,6 +69,13 @@ const randomise = (player) => {
     //     total = 0;
     //     random = 0;
     // }
+
+    // if (playerOne) {
+    //     document.getElementById("holder1").innerHTML = total
+    // }
+    // else if (!playerOne) {
+    //     document.getElementById("holder2").innerHTML = total
+    //     }
 }
 
 holdButton.addEventListener("click", () => {
@@ -80,9 +87,9 @@ holdButton.addEventListener("click", () => {
         playerOne = false;
         scores()
     }
-    else {
+    else if (!playerOne) {
         playerTwoScore = playerTwoScore + total;
-        document.getElementById("text2").innerHTML = `Player 2 now has ${playerTwoScore} points`
+        document.getElementById("message").innerHTML = `Player 2 now has ${playerTwoScore} points`
         document.getElementById("text2").innerHTML = `${playerTwoScore}`
         total = 0; 
         playerOne = true;
