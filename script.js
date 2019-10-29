@@ -1,5 +1,6 @@
 let roll = document.getElementById("rollButton")
-const holdButton = document.getElementById("holdButton")
+let reset = document.getElementById("reset")
+let holdButton = document.getElementById("holdButton")
 
 let playerOne = true;
 let playerOneScore = 0;
@@ -24,16 +25,13 @@ const scores = () => {
         document.getElementById("One").innerHTML += `Winner`
         console.log(playerOneScore)
         rollButton.textContent = "Play again"
-        // total = 0;
-        random = 0;
     }
     else if (playerTwoScore >= 20) {
         document.getElementById("Two").innerHTML += `Winner`
         console.log(playerTwoScore)
         rollButton.textContent = "Play again"
-        total = 0;
-        random = 0;
     }    
+
 }
 
 const check = () => {
@@ -100,3 +98,12 @@ holdButton.addEventListener("click", () => {
 roll.addEventListener("click", () => {
     check()
 })
+
+reset.addEventListener("click", () => {
+    refreshPage()
+})
+
+
+const refreshPage = () => {
+    window.location.reload();
+ }

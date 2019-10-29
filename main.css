@@ -72,10 +72,9 @@ body {
         height: 140px;
         width: 250px;
     } */
-  /* Dice holder */
 }
 
-.section button {
+button {
   color: white;
   font-size: 25px;
   background-color: green;
@@ -86,15 +85,16 @@ body {
   margin-top: 30px;
 }
 
-.section button:hover {
+button:hover {
   background-color: #0f490f;
 }
 
-.section button:active {
+button:active {
   background-color: #0e2e0e;
 }
 
-.section #dice {
+/* Dice holder */
+#dice {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
