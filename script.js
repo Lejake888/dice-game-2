@@ -1,6 +1,8 @@
 let roll = document.getElementById("rollButton")
 let reset = document.getElementById("reset")
 let holdButton = document.getElementById("holdButton")
+reset.style.visibility = 'hidden';
+
 
 let playerOne = true;
 let playerOneScore = 0;
@@ -24,13 +26,19 @@ const scores = () => {
         total = 0;
         document.getElementById("One").innerHTML += `Winner`
         console.log(playerOneScore)
-        rollButton.textContent = "Play again"
+        reset.style.visibility = 'visible';
+        roll.style.visibility = 'hidden';
+        holdButton.style.visibility = 'hidden';
+
     }
     else if (playerTwoScore >= 20) {
         document.getElementById("Two").innerHTML += `Winner`
         console.log(playerTwoScore)
-        rollButton.textContent = "Play again"
+        reset.style.visibility = 'visible';
+        roll.style.visibility = 'hidden';
+        holdButton.style.visibility = 'hidden';
     }    
+    
 
 }
 
@@ -106,4 +114,4 @@ reset.addEventListener("click", () => {
 
 const refreshPage = () => {
     window.location.reload();
- }
+}
