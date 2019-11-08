@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lalezar&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Jura&display=swap');
 
 /* Title */
 
 h1 {
     color:white;
     text-align: center;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Press Start 2P', cursive;
     font-size: 50px;
 }
 
@@ -49,14 +48,9 @@ body {
         justify-content: center;
         margin: 2%;
 
-
-    /* p {
-        margin-left: -20px;
-        margin-right: -20px;
-        height: 140px;
-        width: 250px;
-    } */
-}
+    #message {
+        height: 100px;
+    }
 
     button{
         color: white;
@@ -76,12 +70,7 @@ body {
     button:active{
         background-color: rgb(14, 46, 14);
     }
-
-    // p {
-    //     font-family: 'Lalezar', cursive;
-    //     font-size: 20px;
-    // } 
-
+}
     /* Dice holder */ 
 
     #dice {
@@ -105,13 +94,16 @@ body {
     background-color: rgb(52, 165, 42);
 
     #text1, #text2 {
-        margin: 0;
+        margin-top: 24px;
+        margin-left: 2px;
         color:white;
         font-size: 80px;
-        font-family: "Jura";
+        font-family: 'Press Start 2P', cursive;
+
     }
     #holder1, #holder2 {
         font-size: 100px;
-        font-family: "Jura";
+        font-family: 'Press Start 2P', cursive;
+
     }
 }

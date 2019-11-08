@@ -1,6 +1,8 @@
 let roll = document.getElementById("rollButton")
 let reset = document.getElementById("reset")
+let rules = document.getElementById("rules")
 let holdButton = document.getElementById("holdButton")
+
 reset.style.visibility = 'hidden';
 
 
@@ -52,7 +54,7 @@ const check = () => {
     }
 }
 
-const randomise = (player) => {
+const randomise = () => {
     let random = Math.ceil(Math.random() * 6)
     const image = document.getElementById("dice")
 
@@ -111,6 +113,9 @@ reset.addEventListener("click", () => {
     refreshPage()
 })
 
+reset.addEventListener("click", () => {
+    refreshPage()
+})
 
 const refreshPage = () => {
     window.location.reload();

@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lalezar&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Jura&display=swap");
 /* Title */
 h1 {
   color: white;
   text-align: center;
-  font-family: 'Staatliches', cursive;
+  font-family: 'Press Start 2P', cursive;
   font-size: 50px;
 }
 
@@ -66,15 +65,13 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 2%;
-  /* p {
-        margin-left: -20px;
-        margin-right: -20px;
-        height: 140px;
-        width: 250px;
-    } */
 }
 
-button {
+.section #message {
+  height: 100px;
+}
+
+.section button {
   color: white;
   font-size: 25px;
   background-color: green;
@@ -85,11 +82,11 @@ button {
   margin-top: 30px;
 }
 
-button:hover {
+.section button:hover {
   background-color: #0f490f;
 }
 
-button:active {
+.section button:active {
   background-color: #0e2e0e;
 }
 
@@ -121,14 +118,15 @@ button:active {
 }
 
 .infoBox #text1, .infoBox #text2 {
-  margin: 0;
+  margin-top: 24px;
+  margin-left: 2px;
   color: white;
   font-size: 80px;
-  font-family: "Jura";
+  font-family: 'Press Start 2P', cursive;
 }
 
 .infoBox #holder1, .infoBox #holder2 {
   font-size: 100px;
-  font-family: "Jura";
+  font-family: 'Press Start 2P', cursive;
 }
 /*# sourceMappingURL=main.css.map */
