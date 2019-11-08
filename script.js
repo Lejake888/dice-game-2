@@ -68,7 +68,7 @@ const randomise = () => {
         document.getElementById("message").innerHTML += `You lost the round!`
         total = 0 
         rollButton.textContent = "Next"
-        playerOne = false;
+        playerOne = !playerOne;
     }
     // else if (total >= 20) {
     //     document.getElementById("message").innerHTML += `You win!`
