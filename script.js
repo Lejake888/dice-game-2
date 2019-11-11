@@ -11,15 +11,6 @@ let playerOneScore = 0;
 let playerTwoScore = 0;
 let total = 0;
 
-// const toggle = () => {
-//     if (player1) {
-//         console.log("Hello")
-//     }
-//     else {
-//         console.log("Bye")
-//     }
-// }
-
 const scores = () => {
     // if (playerOneScore ==0) {
     //     console.log("hi")
@@ -40,16 +31,16 @@ const scores = () => {
         roll.style.visibility = 'hidden';
         holdButton.style.visibility = 'hidden';
     }    
-    
-
 }
 
 const check = () => {
     scores()
     if (playerOne) {
+        console.log("player 1 turn")
         randomise(playerOneScore)
     }
     else {
+        console.log("player 2 turn")
         randomise(playerTwoScore)
     }
 }
@@ -62,7 +53,8 @@ const randomise = () => {
     image.src = "img/dice"+random+".png";
     total = total + random;
 
-    document.getElementById("message").innerHTML = `Random Number = ${random} <br> Total = ${total} <br>`
+    document.getElementById("message").innerHTML = `Random Number = ${random}<br>`
+    // document.getElementById("message").innerHTML = `Random Number = ${random} <br> Total = ${total} <br>`
 
     if (random == 1 && total < 20) {
         document.getElementById("message").innerHTML += `You lost the round!`
@@ -77,12 +69,12 @@ const randomise = () => {
     //     random = 0;
     // }
 
-    // if (playerOne) {
-    //     document.getElementById("holder1").innerHTML = total
-    // }
-    // else if (!playerOne) {
-    //     document.getElementById("holder2").innerHTML = total
-    //     }
+    if (playerOne) {
+        document.getElementById("holder1").innerHTML = "Total <br>" + total
+    }
+    else if (!playerOne) {
+        document.getElementById("holder2").innerHTML = "Total <br>" + total
+        }
 }
 
 holdButton.addEventListener("click", () => {
