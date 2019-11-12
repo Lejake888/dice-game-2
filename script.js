@@ -1,7 +1,8 @@
 let roll = document.getElementById("rollButton")
 let reset = document.getElementById("reset")
-let rules = document.getElementById("rules")
 let holdButton = document.getElementById("holdButton")
+let square1 = document.getElementById("sqaure1")
+let square2 = document.getElementById("sqaure2")
 
 reset.style.visibility = 'hidden';
 
@@ -105,9 +106,14 @@ reset.addEventListener("click", () => {
     refreshPage()
 })
 
-reset.addEventListener("click", () => {
-    refreshPage()
-})
+// if (playerOne) {
+//     square1.style.background = rgba(255,255,255,1)
+//     square2.style.background = rgba(255,255,255,0.5)
+// }
+// else {
+//     square2.style.background = rgba(255,255,255,1)
+//     square1.style.background = rgba(255,255,255,0.5)
+// }
 
 const refreshPage = () => {
     window.location.reload();

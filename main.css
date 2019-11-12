@@ -35,7 +35,7 @@ body {
   font-size: 20px;
 }
 
-.square .square1, .square .square2 {
+.square #square1, .square #square2 {
   min-height: 80vh;
   width: 50%;
   -webkit-box-orient: vertical;
