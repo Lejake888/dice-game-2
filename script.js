@@ -18,7 +18,7 @@ const scores = () => {
     // }
     if (playerOneScore >= 20) {
         total = 0;
-        document.getElementById("One").innerHTML += `Winner`
+        // document.getElementById("One").innerHTML += `Winner`
         console.log(playerOneScore)
         reset.style.visibility = 'visible';
         roll.style.visibility = 'hidden';
@@ -26,7 +26,7 @@ const scores = () => {
 
     }
     else if (playerTwoScore >= 20) {
-        document.getElementById("Two").innerHTML += `Winner`
+        // document.getElementById("Two").innerHTML += `Winner`
         console.log(playerTwoScore)
         reset.style.visibility = 'visible';
         roll.style.visibility = 'hidden';
