@@ -4,11 +4,9 @@ let holdButton = document.getElementById("holdButton")
 
 let one = document.getElementById("One")
 let two = document.getElementById("Two")
+reset.style.visibility = 'hidden';
 one.style.color = "black"
 two.style.color = "grey"
-
-reset.style.visibility = 'hidden';
-
 
 let playerOne = true;
 let playerOneScore = 0;
@@ -30,12 +28,9 @@ const colorToggle = () => {
 }
 
 const scores = () => {
-    // if (playerOneScore ==0) {
-    //     console.log("hi")
-    // }
+
     if (playerOneScore >= 20) {
         total = 0;
-        // document.getElementById("One").innerHTML += `Winner`
         console.log(playerOneScore)
         reset.style.visibility = 'visible';
         roll.style.visibility = 'hidden';
@@ -43,7 +38,6 @@ const scores = () => {
 
     }
     else if (playerTwoScore >= 20) {
-        // document.getElementById("Two").innerHTML += `Winner`
         console.log(playerTwoScore)
         reset.style.visibility = 'visible';
         roll.style.visibility = 'hidden';
@@ -72,19 +66,12 @@ const randomise = () => {
     total = total + random;
 
     document.getElementById("message").innerHTML = `Random Number = ${random}<br>`
-    // document.getElementById("message").innerHTML = `Random Number = ${random} <br> Total = ${total} <br>`
-
+    
     if (random == 1 && total < 20) {
         colorToggle()
         rollButton.textContent = "Next"
         playerOne = !playerOne;
     }
-    // else if (total >= 20) {
-    //     document.getElementById("message").innerHTML += `You win!`
-    //     rollButton.textContent = "Play again"
-    //     total = 0;
-    //     random = 0;
-    // }
 
     if (playerOne) {
         document.getElementById("holder1").innerHTML = "Total <br>" + total
@@ -98,6 +85,7 @@ holdButton.addEventListener("click", () => {
     colorToggle()
     if (playerOne) {
         playerOneScore = playerOneScore + total
+        console.log(playerOneScore)
         document.getElementById("message").innerHTML = `Player 1 now has ${playerOneScore} points`
         document.getElementById("text1").innerHTML = `${playerOneScore}`
         total = 0;
@@ -106,6 +94,7 @@ holdButton.addEventListener("click", () => {
     }
     else if (!playerOne) {
         playerTwoScore = playerTwoScore + total;
+        console.log(playerTwoScore)
         document.getElementById("message").innerHTML = `Player 2 now has ${playerTwoScore} points`
         document.getElementById("text2").innerHTML = `${playerTwoScore}`
         total = 0; 
