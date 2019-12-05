@@ -58,8 +58,13 @@ const randomise = () => {
     // document.getElementById("message").innerHTML = `Random Number = ${random} <br> Total = ${total} <br>`
 
     if (random == 1 && total < 20) {
-        document.getElementById("message").innerHTML += `You lost the round!`
-        total = 0 
+        if (playerOne) {
+            document.getElementById("message").innerHTML += `Player 1, You lost the round!`
+            total = 0 
+        }
+        else {
+            document.getElementById("message").innerHTML += `Player 2, You lost the round!`
+        }
         rollButton.textContent = "Next"
         playerOne = !playerOne;
     }
