@@ -1,8 +1,11 @@
 let roll = document.getElementById("rollButton")
 let reset = document.getElementById("reset")
 let holdButton = document.getElementById("holdButton")
-let square1 = document.getElementById("sqaure1")
-let square2 = document.getElementById("sqaure2")
+
+let one = document.getElementById("One")
+let two = document.getElementById("Two")
+one.style.color = "black"
+two.style.color = "grey"
 
 reset.style.visibility = 'hidden';
 
@@ -11,6 +14,20 @@ let playerOne = true;
 let playerOneScore = 0;
 let playerTwoScore = 0;
 let total = 0;
+
+const colorToggle = () => {
+    if (playerOne) {
+        document.getElementById("message").innerHTML += `Player 1, You lost the round! It's player 2's turn`
+        total = 0 
+        one.style.color = "grey"
+        two.style.color = "black"
+    }
+    else {
+        document.getElementById("message").innerHTML += `Player 2, You lost the round! It's player 1's turn`
+        one.style.color = "black"
+        two.style.color = "grey"
+    }
+}
 
 const scores = () => {
     // if (playerOneScore ==0) {
@@ -58,13 +75,7 @@ const randomise = () => {
     // document.getElementById("message").innerHTML = `Random Number = ${random} <br> Total = ${total} <br>`
 
     if (random == 1 && total < 20) {
-        if (playerOne) {
-            document.getElementById("message").innerHTML += `Player 1, You lost the round!`
-            total = 0 
-        }
-        else {
-            document.getElementById("message").innerHTML += `Player 2, You lost the round!`
-        }
+        colorToggle()
         rollButton.textContent = "Next"
         playerOne = !playerOne;
     }
@@ -84,6 +95,7 @@ const randomise = () => {
 }
 
 holdButton.addEventListener("click", () => {
+    colorToggle()
     if (playerOne) {
         playerOneScore = playerOneScore + total
         document.getElementById("message").innerHTML = `Player 1 now has ${playerOneScore} points`
@@ -110,15 +122,6 @@ roll.addEventListener("click", () => {
 reset.addEventListener("click", () => {
     refreshPage()
 })
-
-// if (playerOne) {
-//     square1.style.background = rgba(255,255,255,1)
-//     square2.style.background = rgba(255,255,255,0.5)
-// }
-// else {
-//     square2.style.background = rgba(255,255,255,1)
-//     square1.style.background = rgba(255,255,255,0.5)
-// }
 
 const refreshPage = () => {
     window.location.reload();

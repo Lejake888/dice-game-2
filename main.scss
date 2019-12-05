@@ -17,6 +17,11 @@ body {
     margin: 20px;
 }
 
+p {
+    width: 200px;
+    padding-bottom: 20px;
+}
+
 /* squares */
 
 .square {
@@ -30,15 +35,20 @@ body {
     font-family: "Lalezar";
     font-size: 20px;
 
-    #square1, #square2{
+    #square1, #square2 {
         min-height: 80vh;
         width:50%;
         flex-direction: column;    
         background-color: white;
         outline: 5px solid black;
         display: flex;
+
+        span {
+            font-size: 30px;
+        }
     }
 }
+
 
 /* Middle */
 

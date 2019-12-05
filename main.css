@@ -15,6 +15,11 @@ body {
   margin: 20px;
 }
 
+p {
+  width: 200px;
+  padding-bottom: 20px;
+}
+
 /* squares */
 .square {
   display: -webkit-box;
@@ -48,6 +53,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.square #square1 span, .square #square2 span {
+  font-size: 30px;
 }
 
 /* Middle */
