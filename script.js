@@ -70,6 +70,7 @@ const randomise = () => {
     if (random == 1 && total < 20) {
         colorToggle()
         rollButton.textContent = "Next"
+        total = 0;
         playerOne = !playerOne;
     }
 
@@ -82,10 +83,8 @@ const randomise = () => {
 }
 
 holdButton.addEventListener("click", () => {
-    colorToggle()
     if (playerOne) {
         playerOneScore = playerOneScore + total
-        console.log(playerOneScore)
         document.getElementById("message").innerHTML = `Player 1 now has ${playerOneScore} points`
         document.getElementById("text1").innerHTML = `${playerOneScore}`
         total = 0;
@@ -94,7 +93,6 @@ holdButton.addEventListener("click", () => {
     }
     else if (!playerOne) {
         playerTwoScore = playerTwoScore + total;
-        console.log(playerTwoScore)
         document.getElementById("message").innerHTML = `Player 2 now has ${playerTwoScore} points`
         document.getElementById("text2").innerHTML = `${playerTwoScore}`
         total = 0; 
