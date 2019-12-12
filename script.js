@@ -4,9 +4,14 @@ let holdButton = document.getElementById("holdButton")
 
 let one = document.getElementById("One")
 let two = document.getElementById("Two")
+let onebackground = document.getElementById("square1")
+let twobackground = document.getElementById("square2")
+
 reset.style.visibility = 'hidden';
 one.style.color = "black"
 two.style.color = "grey"
+onebackground.style.backgroundColor = "rgba(255,255,255,1)"
+twobackground.style.backgroundColor = "rgba(255,255,255,0.7)"
 
 let playerOne = true;
 let playerOneScore = 0;
@@ -14,16 +19,21 @@ let playerTwoScore = 0;
 let total = 0;
 
 const colorToggle = () => {
+
     if (playerOne) {
         document.getElementById("message").innerHTML += `Player 1, You lost the round! It's player 2's turn`
         total = 0 
         one.style.color = "grey"
         two.style.color = "black"
+        onebackground.style.backgroundColor = "rgba(255,255,255,0.7)"
+        twobackground.style.backgroundColor = "rgba(255,255,255,1)"
     }
     else {
         document.getElementById("message").innerHTML += `Player 2, You lost the round! It's player 1's turn`
         one.style.color = "black"
         two.style.color = "grey"
+        onebackground.style.backgroundColor = "rgba(255,255,255,1)"
+        twobackground.style.backgroundColor = "rgba(255,255,255,0.7)"
     }
 }
 
@@ -87,18 +97,24 @@ holdButton.addEventListener("click", () => {
         playerOneScore = playerOneScore + total
         document.getElementById("message").innerHTML = `Player 1 now has ${playerOneScore} points`
         document.getElementById("text1").innerHTML = `${playerOneScore}`
-        total = 0;
         playerOne = false;
-        scores()
+        one.style.color = "grey"
+        two.style.color = "black"
+        onebackground.style.backgroundColor = "rgba(255,255,255,0.7)"
+        twobackground.style.backgroundColor = "rgba(255,255,255,1)"
     }
     else if (!playerOne) {
         playerTwoScore = playerTwoScore + total;
         document.getElementById("message").innerHTML = `Player 2 now has ${playerTwoScore} points`
         document.getElementById("text2").innerHTML = `${playerTwoScore}`
-        total = 0; 
         playerOne = true;
-        scores()
+        one.style.color = "black"
+        two.style.color = "grey"
+        onebackground.style.backgroundColor = "rgba(255,255,255,1)"
+        twobackground.style.backgroundColor = "rgba(255,255,255,0.7)"
     }
+    total = 0; 
+    scores()
 }
 )
 
